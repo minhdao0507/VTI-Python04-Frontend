@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BoxModel</title>
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .p-content {
+            margin: 1em;
+        }
+
+        h2 {
+            margin: 0.83em;
+        }
+
+        .row {
+            border: 1px solid red;
+            /* width: fit-content; */
+            /* width: 400px; */
+            margin-left: 50px;
+
+            width: 800px;
+
+            height: 1000px;
+
+            position: relative;
+
+            /* TH cụ thế mới dùng khi có phần tử con là absolute */
+            /* position: absolute;  */
+        }
+
+        .item {
+            width: 300px;
+            height: 300px;
+            /* float: left; */
+        }
+
+        .one {
+            /* border: 2px solid blue; */
+            /* margin: 20px; */
+            /* margin: 20px 50px; */
+            /* margin: 100px 10px 50px 80px; */
+            /* margin: 200px 20px 10px; */
+            padding: 30px;
+
+            width: 10px;
+            height: 10px;
+
+            background-color: transparent !important;
+
+            /* Relative: Không cho phần tử khác chiếm vị trí mặc định ban đầu(static)*/
+            /* position: relative;  */
+
+            /* Absolute: Cho phần tử khác chiếm vị trí mặc định ban đầu(static)
+                Phần tử cha phải mang 1 trong 3 thuộc tính position: relative; fixed; absolute,
+                nếu không phần tử đó sẽ so sánh vị trí với phần tử ngoài cùng html của cửa sổ trình duyệt
+            */
+            position: absolute; 
+
+            top: -23px;
+            right: -10px;
+
+            cursor: pointer;
+        }
+
+        /* Fixed: Hay dùng cho top,bottom nav + sidebar*/
+        .two {
+            /* Fixed: So sánh vị trí với phần tử ngoài cùng html của cửa sổ trình duyệt)*/
+            /* position: fixed; */
+            position: sticky;
+
+            top: 10px;
+            left: 20px;
+        }
+
+        .row2 {
+            height: 100vh;
+            width: 200px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: lightslategray;
+        }
+    </style>
+</head>
+<body>
+    <h2>CSS boxmodel & position</h2>
+    <p class="p-content">In this example, we have learned how boxmodle an position work</p>
+    <span>123abc</span>
+    <span>123abc</span>
+    <div class="row">
+        <div class="item one" 
+            style="background-color: #aaa"
+        >
+            X
+        </div>
+        <div class="item two" style="background-color: green">item 2</div>
+        <div class="item" style="background-color: orangered">item 3</div>
+    </div>
+    <div class="row2">
+        <h1 style="background-color: blue">Row 2</h1>
+    </div>
+</body>
+</html>
